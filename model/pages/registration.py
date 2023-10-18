@@ -4,6 +4,9 @@ from selene.support.conditions import have
 from selene.support.shared import browser
 import os.path
 
+from model.data.users import User
+
+
 class Registration:
     def __init__(self):
         pass
@@ -13,53 +16,41 @@ class Registration:
         browser.element('#fixedban').execute_script('element.remove()')
         browser.element('footer').execute_script('element.remove()')
 
-    def set_first_name(self, value):
-        browser.element('#firstName').type(value)
+    def register(self, user: User):
+        browser.element('#firstName').type(user.first_name)
+        browser.element('#lastName').type(user.last_name)
+        browser.element('#userEmail').type(user.email)
+        browser.all('.custom-control-label').element_by(have.text(user.gender.value)).click()
 
-    def set_last_name(self, value):
-        browser.element('#lastName').type(value)
+        browser.element('#userNumber').type(user.mobile_phone)
 
-    def set_email(self, value):
-        browser.element('#userEmail').type(value)
-
-    def set_gender(self, value):
-        browser.all('.custom-control-label').element_by(have.text(value)).click()
-
-    def set_phone_number(self, value):
-        browser.element('#userNumber').type(value)
-
-    def set_birthdate(self, year, month, date):
         browser.element('#dateOfBirthInput').click()
         browser.element('.react-datepicker__year-select').click().element(
-            by.text(year)).click()
-        browser.element('.react-datepicker__month-select').click().element(
-            by.text(month)).click()
-        browser.all('.react-datepicker__day').element_by(have.text(date)).click()
+            by.text(str(user.birthdate.year))).click()
+        browser.element('.react-datepicker__month-select').click()
+        browser.element('.react-datepicker__month-select').click().element(by.text(user.birthdate.strftime('%B'))).click()
+        #browser.element(f'.react-datepicker__month-select>option[value=\'{str(user.birthdate.month)}\']').click()
+        browser.all('.react-datepicker__day').element_by(have.exact_text(str(user.birthdate.day))).click()
 
-    def set_subject(self, value):
-        browser.element('#subjectsInput').type(value).press_enter()
+        browser.element('#subjectsInput').type(user.subject).press_enter()
+        browser.all('.custom-control-label').element_by(have.text(user.hobbies.value)).click()
+        browser.element('#uploadPicture').send_keys(os.path.abspath(f'img/{user.picture_path}'))
+        browser.element('#currentAddress').type(user.current_address)
+        browser.element('#state').click().element(by.text(user.state)).click()
+        browser.element('#city').click().element(by.text(user.city)).click()
 
-    def set_hobbie(self, value):
-        browser.all('.custom-control-label').element_by(have.text(value)).click()
-
-    def upload_image(self, file_name):
-        browser.element('#uploadPicture').send_keys(os.path.abspath(file_name))
-
-    def set_current_address(self, value):
-        browser.element('#currentAddress').type(value)
-
-    def set_state(self, value):
-        browser.element('#state').click().element(by.text(value)).click()
-
-    def set_city(self, value):
-        browser.element('#city').click().element(by.text(value)).click()
-
-    def submit_form(self):
         browser.element('#submit').perform(command.js.scroll_into_view)
         browser.element('#submit').submit()
 
-    def get_modal_header(self):
-        return browser.element('.modal-header')
-
-    def get_confirmation_table(self):
-        return browser.element('.table')
+    def should_have_registered(self, user: User):
+        return browser.element('.table').all('td:nth-child(2)').should(
+            have.texts(f'{user.first_name} {user.last_name}',
+                       user.email,
+                       user.gender.value,
+                       user.mobile_phone,
+                       user.birthdate.strftime("%d %B,%Y"),  # тут скорее всего будет ошибка. Формат даты
+                       user.subject,
+                       user.hobbies.value,
+                       user.picture_path,
+                       user.current_address,
+                       f'{user.state} {user.city}'))
