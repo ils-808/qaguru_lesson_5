@@ -15,17 +15,27 @@ class Hobbies(Enum):
 
 
 @dataclasses.dataclass
-class User:
+class BaseUser:
+    current_address: str
+    email: str
+
+@dataclasses.dataclass
+class User(BaseUser):
+    perm_address: str
+    full_name:str
+
+
+
+@dataclasses.dataclass
+class Student(BaseUser):
     first_name: str
     last_name: str
-    email: str
     gender: Gender
     mobile_phone: str
     birthdate: datetime.date
     subject: str
     hobbies: Hobbies
     picture_path: str
-    current_address: str
     state: str
     city: str
 
