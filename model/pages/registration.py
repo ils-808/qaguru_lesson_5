@@ -4,9 +4,10 @@ from selene.support.conditions import have
 from selene.support.shared import browser
 import os.path
 
+import tests
+
+
 class Registration:
-    def __init__(self):
-        pass
 
     def open(self):
         browser.open("/automation-practice-form")
@@ -43,7 +44,8 @@ class Registration:
         browser.all('.custom-control-label').element_by(have.text(value)).click()
 
     def upload_image(self, file_name):
-        browser.element('#uploadPicture').send_keys(os.path.abspath(file_name))
+        browser.element('#uploadPicture').send_keys(os.path.abspath(\
+            os.path.join(os.path.dirname(tests.__file__), f'img/{file_name}')))
 
     def set_current_address(self, value):
         browser.element('#currentAddress').type(value)
@@ -58,8 +60,12 @@ class Registration:
         browser.element('#submit').perform(command.js.scroll_into_view)
         browser.element('#submit').submit()
 
-    def get_modal_header(self):
-        return browser.element('.modal-header')
+    def modal_header_should_have(self, value):
+        browser.element('.modal-header').should(have.text(value))
 
-    def get_confirmation_table(self):
-        return browser.element('.table')
+    def confirmation_table_should_have(self, full_name, email, gender, phone_number, birthdate, subject, hobbie,
+                                       img_path, curr_addr,
+                                       state_city):
+        return browser.element('.table').all('td:nth-child(2)').should(
+            have.texts(full_name, email, gender, phone_number, birthdate, subject, hobbie, img_path,
+                       curr_addr, state_city))

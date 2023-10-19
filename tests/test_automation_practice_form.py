@@ -15,15 +15,15 @@ def test_submit_form():
     registration.set_subject('Maths')
     registration.set_hobbie('Sports')
 
-    registration.upload_image('img/images.jpg')
+    registration.upload_image('images.jpg')
     registration.set_current_address('currentAddr')
     registration.set_state('NCR')
     registration.set_city('Delhi')
     registration.submit_form()
 
-    registration.get_modal_header().should(have.text('Thanks for submitting the form'))
-    registration.get_confirmation_table().all('td:nth-child(2)').should(
-        have.texts('fName lName',
+    registration.modal_header_should_have('Thanks for submitting the form')
+
+    registration.confirmation_table_should_have('fName lName',
                    'asd@asd.as',
                    'Male',
                    '0123456789',
@@ -32,4 +32,4 @@ def test_submit_form():
                    'Sports',
                    'images.jpg',
                    'currentAddr',
-                   'NCR Delhi'))
+                   'NCR Delhi')
