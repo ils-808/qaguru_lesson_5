@@ -1,7 +1,4 @@
 from datetime import date
-
-from selene import have
-
 from model.data.users import User, Gender, Hobbies
 from model.pages.registration import Registration
 

@@ -4,12 +4,11 @@ from selene.support.conditions import have
 from selene.support.shared import browser
 import os.path
 
+import tests
 from model.data.users import User
 
 
 class Registration:
-    def __init__(self):
-        pass
 
     def open(self):
         browser.open("/automation-practice-form")
@@ -29,12 +28,12 @@ class Registration:
             by.text(str(user.birthdate.year))).click()
         browser.element('.react-datepicker__month-select').click()
         browser.element('.react-datepicker__month-select').click().element(by.text(user.birthdate.strftime('%B'))).click()
-        #browser.element(f'.react-datepicker__month-select>option[value=\'{str(user.birthdate.month)}\']').click()
         browser.all('.react-datepicker__day').element_by(have.exact_text(str(user.birthdate.day))).click()
 
         browser.element('#subjectsInput').type(user.subject).press_enter()
         browser.all('.custom-control-label').element_by(have.text(user.hobbies.value)).click()
-        browser.element('#uploadPicture').send_keys(os.path.abspath(f'img/{user.picture_path}'))
+        browser.element('#uploadPicture').send_keys(os.path.abspath(\
+            os.path.join(os.path.dirname(tests.__file__), f'img/{user.picture_path}')))
         browser.element('#currentAddress').type(user.current_address)
         browser.element('#state').click().element(by.text(user.state)).click()
         browser.element('#city').click().element(by.text(user.city)).click()
