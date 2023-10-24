@@ -5,6 +5,7 @@ from selene import have
 from model.application_manager import app
 from model.data.users import Student, Gender, Hobbies, User
 from model.pages.registration import Registration
+import os
 
 
 def test_submit_form():
@@ -19,8 +20,6 @@ def test_submit_form():
 
 def test_simple_form():
     user = User(full_name='asd', email='asd@asd.asd', current_address='cur_addr', perm_address='perm_addr')
-    app.panel.open_simple_registration_form('Elements', 'Text Box')
-    app.remove_bottom_elements
-    #app.simple_registration.open()
+    app.panel.open_simple_registration_form()
     app.simple_registration.register_user(user)
     app.simple_registration.should_be_registred(user)

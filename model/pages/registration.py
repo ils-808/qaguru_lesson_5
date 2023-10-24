@@ -5,6 +5,7 @@ from selene.support.shared import browser
 import os.path
 
 from model.data.users import Student
+from utils.resource_handler import path
 
 
 class Registration:
@@ -32,7 +33,7 @@ class Registration:
 
         browser.element('#subjectsInput').type(student.subject).press_enter()
         browser.all('.custom-control-label').element_by(have.text(student.hobbies.value)).click()
-        browser.element('#uploadPicture').send_keys(os.path.abspath(f'img/{student.picture_path}'))
+        browser.element('#uploadPicture').send_keys(path('tests/img/'+student.picture_path))
         browser.element('#currentAddress').type(student.current_address)
         browser.element('#state').click().element(by.text(student.state)).click()
         browser.element('#city').click().element(by.text(student.city)).click()
