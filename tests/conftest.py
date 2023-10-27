@@ -32,7 +32,6 @@ def configure_browser():
     selenoid_capabilities = {
         'browserName': config.browser,
         'browserVersion': config.version,
-        #'screenResolution': '(1920x1080x24)',#f'({config.width}*{config.height})',
         'selenoid:options': {
             'enableVNC': True,
             'enableVideo': True
@@ -44,7 +43,6 @@ def configure_browser():
         command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options
     )
-    browser.config.window_width
     browser.config.base_url = config.base_url
     browser.config.driver = driver
 
@@ -52,7 +50,7 @@ def configure_browser():
 
     attach.add_screenshot(browser)
     attach.add_html(browser)
-    #attach.add_logs(browser)
+    attach.add_logs(browser)
     attach.add_video(browser)
 
     browser.quit()
