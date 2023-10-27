@@ -15,7 +15,7 @@ BrowserType = Literal['chrome', 'firefox', 'edge']
 
 
 class Configure(pydantic_settings.BaseSettings):
-    context: Literal['local', 'prod'] = 'local'
+    context: Literal['local', 'prod'] = 'prod'
     base_url: str = 'https://demoqa.com'
     height: str = '1080'
     width: str = '1920'
@@ -52,7 +52,7 @@ def configure_browser():
 
     attach.add_screenshot(browser)
     attach.add_html(browser)
-    attach.add_logs(browser)
+    #attach.add_logs(browser)
     attach.add_video(browser)
 
     browser.quit()
