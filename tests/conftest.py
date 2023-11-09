@@ -22,6 +22,10 @@ class Configure(pydantic_settings.BaseSettings):
     timeout: float = 3.0
     browser: BrowserType = 'chrome'
     version: str = '100'
+    login: str = 'dummy_value'
+    password: str = 'dummy_value'
+    remote_browser_url: str = 'dummy_value'
+
 
 config = Configure(_env_file=path(f'.env.{Configure().context}'))
 
@@ -40,7 +44,7 @@ def configure_browser():
     options.capabilities.update(selenoid_capabilities)
     options.add_argument(f'--window-size={config.width},{config.height}')
     driver = webdriver.Remote(
-        command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"https://{config.login}:{config.password}@{config.remote_browser_url}",
         options=options
     )
     browser.config.base_url = config.base_url
