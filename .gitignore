@@ -158,3 +158,4 @@ cython_debug/
 .idea/
 allure-results
 .env.prod
+/notifications/allure-notifications-4.4.0.jar
