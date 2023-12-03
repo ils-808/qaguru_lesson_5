@@ -15,7 +15,7 @@
 
 ### Используемый стэк
 
-<img title="Python" src="qa_guru_python_8_15/pictures/icons/python-original.svg" height="40" width="40"/> <img title="Pytest" src="qa_guru_python_8_15/pictures/icons/pytest-original.svg" height="40" width="40"/> <img title="Jira" src="qa_guru_python_8_15/pictures/icons/jira-original.svg" height="40" width="40"/> <img title="Allure Report" src="qa_guru_python_8_15/pictures/icons/Allure_Report.jpg" height="40" width="40"/> <img title="Allure TestOps" src="qa_guru_python_8_15/pictures/icons/AllureTestOps.jpg" height="40" width="40"/> <img title="GitHub" src="qa_guru_python_8_15/pictures/icons/github-original.svg" height="40" width="40"/> <img title="Selenoid" src="qa_guru_python_8_15/pictures/icons/selenoid.jpg" height="40" width="40"/> <img title="Selenium" src="qa_guru_python_8_15/pictures/icons/selenium-original.svg" height="40" width="40"/> <img title="Selene" src="qa_guru_python_8_15/pictures/icons/selene.jpg" height="40" width="40"/> <img title="Pycharm" src="qa_guru_python_8_15/pictures/icons/pycharm.jpg" height="40" width="40"/> <img title="Telegram" src="qa_guru_python_8_15/pictures/icons/tg.jpg" height="40" width="40"/> <img title="Jenkins" src="qa_guru_python_8_15/pictures/icons/jenkins-original.svg" height="40" width="40"/>
+<img title="Python" src="qa_guru_python_8_15/icons/python-original.svg" height="40" width="40"/> <img title="Pytest" src="qa_guru_python_8_15/icons/pytest-original.svg" height="40" width="40"/> <img title="Jira" src="qa_guru_python_8_15/icons/jira-original.svg" height="40" width="40"/> <img title="Allure Report" src="qa_guru_python_8_15/icons/Allure_Report.jpg" height="40" width="40"/> <img title="Allure TestOps" src="qa_guru_python_8_15/icons/AllureTestOps.jpg" height="40" width="40"/> <img title="GitHub" src="qa_guru_python_8_15/icons/github-original.svg" height="40" width="40"/> <img title="Selenoid" src="qa_guru_python_8_15/icons/selenoid.jpg" height="40" width="40"/> <img title="Selenium" src="qa_guru_python_8_15/icons/selenium-original.svg" height="40" width="40"/> <img title="Selene" src="qa_guru_python_8_15/icons/selene.jpg" height="40" width="40"/> <img title="Pycharm" src="qa_guru_python_8_15/icons/pycharm.jpg" height="40" width="40"/> <img title="Telegram" src="qa_guru_python_8_15/icons/tg.jpg" height="40" width="40"/> <img title="Jenkins" src="qa_guru_python_8_15/icons/jenkins-original.svg" height="40" width="40"/>
 
 ----
 
@@ -51,28 +51,28 @@ run_remote = true - для запуска в CI/CD
 #### Запуск автотестов в Jenkins
 1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/C08-itpmkz-lesson-15/">проект</a>
 
-![jenkins project main page](qa_guru_python_8_15/pictures/jenkins_project_main_page.jpg)
+![jenkins project main page](qa_guru_python_8_15/jenkins_project_main_page.jpg)
 
 2. Нажать "Build with Parameters"
 4. Из списка "CONTEXT" выбрать: PROD
 5. Оставить run_remote = true
 6. Нажать "Build"
 
-![jenkins_build](qa_guru_python_8_15/pictures/jenkins_build.jpg)
+![jenkins_build](qa_guru_python_8_15/jenkins_build.jpg)
 
 ----
 
 ### Allure отчет
 #### Общие результаты 
-![allure_report_overview](qa_guru_python_8_15/pictures/allure_report_overview.jpg)
+![allure_report_overview](qa_guru_python_8_15/allure_report_overview.jpg)
 
 #### Результаты прохождения теста
-![allure_reports_behaviors](qa_guru_python_8_15/pictures/allure_reports_behaviors.jpg)
+![allure_reports_behaviors](qa_guru_python_8_15/allure_reports_behaviors.jpg)
 
 #### Графики
 
-![allure_reports_graphs](qa_guru_python_8_15/pictures/alluere_reports_graphs_1.jpg)
-![allure_reports_graphs](qa_guru_python_8_15/pictures/alluere_reports_graphs_2.jpg)
+![allure_reports_graphs](qa_guru_python_8_15/alluere_reports_graphs_1.jpg)
+![allure_reports_graphs](qa_guru_python_8_15/alluere_reports_graphs_2.jpg)
 
 ----
 
@@ -81,35 +81,35 @@ run_remote = true - для запуска в CI/CD
 
 #### Дашборд с общими показателями тестовых прогонов
 
-![allure_test_ops_dashboards](qa_guru_python_8_15/pictures/allure_testops_dashboards.jpg)
+![allure_test_ops_dashboards](qa_guru_python_8_15/allure_testops_dashboards.jpg)
 
 #### История запуска тестовых наборов
 
-![allure_testops_launches](qa_guru_python_8_15/pictures/allure_testops_launches.jpg)
+![allure_testops_launches](qa_guru_python_8_15/allure_testops_launches.jpg)
 
 #### Тест кейсы
 
-![allure_testops_suites](qa_guru_python_8_15/pictures/allure_testops_suites.jpg)
+![allure_testops_suites](qa_guru_python_8_15/allure_testops_suites.jpg)
 
 ----
 
 ### Интеграция с Jira
 > <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-985">Ссылка на проект</a>
 
-![jira_project](qa_guru_python_8_15/pictures/jira_project.jpg)
+![jira_project](qa_guru_python_8_15/jira_project.jpg)
 
 ----
 
 ### Оповещения в Telegram
-![telegram_allert](qa_guru_python_8_15/pictures/telegram_allert.jpg)
+![telegram_allert](qa_guru_python_8_15/telegram_allert.jpg)
 
 ----
 
 ### Видео прохождения автотеста
-![autotest_mp4](qa_guru_python_8_15/pictures/autotest.mp4)
+![autotest_mp4](qa_guru_python_8_15/autotest.mp4)
 
 ----
 
 ### Mind map тест плана
 
-![allure_reports_graphs](qa_guru_python_8_15/pictures/test-case-mind-map.jpg)
+![allure_reports_graphs](qa_guru_python_8_15/test-case-mind-map.jpg)
