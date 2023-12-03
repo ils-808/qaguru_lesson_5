@@ -106,6 +106,7 @@ run_remote = true - для запуска в CI/CD
 ----
 
 ### Видео прохождения автотеста
-<video src="https://github.com/ils-808/qaguru_lesson_5/blob/deploy-with-jenkins-notify-tg/qa_guru_python_8_15/ToDoautotest.mp4"></video>
+https://github.com/ils-808/qaguru_lesson_5/assets/15216590/776b415e-80e2-4b75-b229-054c7b4e7894
+
 
 ----
