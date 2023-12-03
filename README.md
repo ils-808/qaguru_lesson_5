@@ -106,10 +106,6 @@ run_remote = true - для запуска в CI/CD
 ----
 
 ### Видео прохождения автотеста
-![autotest_mp4](qa_guru_python_8_15/autotest.mp4)
+![autotest_mp4](qa_guru_python_8_15/ToDoautotest.mp4)
 
 ----
-
-### Mind map тест плана
-
-![allure_reports_graphs](qa_guru_python_8_15/test-case-mind-map.JPG)
