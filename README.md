@@ -106,6 +106,6 @@ run_remote = true - для запуска в CI/CD
 ----
 
 ### Видео прохождения автотеста
-![ToDoautotest.mp4](qa_guru_python_8_15/ToDoautotest.mp4)
+![ToDoautotest.mp4]<video src='qa_guru_python_8_15/ToDoautotest.mp4' width=180/>
 
 ----
