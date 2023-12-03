@@ -51,28 +51,28 @@ run_remote = true - для запуска в CI/CD
 #### Запуск автотестов в Jenkins
 1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/C08-itpmkz-lesson-15/">проект</a>
 
-![jenkins project main page](qa_guru_python_8_15/jenkins_project_main_page.jpg)
+![jenkins project main page](qa_guru_python_8_15/jenkins_project_main_page.JPG)
 
 2. Нажать "Build with Parameters"
 4. Из списка "CONTEXT" выбрать: PROD
 5. Оставить run_remote = true
 6. Нажать "Build"
 
-![jenkins_build](qa_guru_python_8_15/jenkins_build.jpg)
+![jenkins_build](qa_guru_python_8_15/jenkins_build.JPG)
 
 ----
 
 ### Allure отчет
 #### Общие результаты 
-![allure_report_overview](qa_guru_python_8_15/allure_report_overview.jpg)
+![allure_report_overview](qa_guru_python_8_15/allure_report_overview.JPG)
 
 #### Результаты прохождения теста
-![allure_reports_behaviors](qa_guru_python_8_15/allure_reports_behaviors.jpg)
+![allure_reports_behaviors](qa_guru_python_8_15/allure_reports_behaviors.JPG)
 
 #### Графики
 
-![allure_reports_graphs](qa_guru_python_8_15/alluere_reports_graphs_1.jpg)
-![allure_reports_graphs](qa_guru_python_8_15/alluere_reports_graphs_2.jpg)
+![allure_reports_graphs](qa_guru_python_8_15/alluere_reports_graphs_1.JPG)
+![allure_reports_graphs](qa_guru_python_8_15/alluere_reports_graphs_2.JPG)
 
 ----
 
@@ -81,27 +81,27 @@ run_remote = true - для запуска в CI/CD
 
 #### Дашборд с общими показателями тестовых прогонов
 
-![allure_test_ops_dashboards](qa_guru_python_8_15/allure_testops_dashboards.jpg)
+![allure_test_ops_dashboards](qa_guru_python_8_15/allure_testops_dashboards.JPG)
 
 #### История запуска тестовых наборов
 
-![allure_testops_launches](qa_guru_python_8_15/allure_testops_launches.jpg)
+![allure_testops_launches](qa_guru_python_8_15/allure_testops_launches.JPG)
 
 #### Тест кейсы
 
-![allure_testops_suites](qa_guru_python_8_15/allure_testops_suites.jpg)
+![allure_testops_suites](qa_guru_python_8_15/allure_testops_suites.JPG)
 
 ----
 
 ### Интеграция с Jira
 > <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-985">Ссылка на проект</a>
 
-![jira_project](qa_guru_python_8_15/jira_project.jpg)
+![jira_project](qa_guru_python_8_15/jira_project.JPG)
 
 ----
 
 ### Оповещения в Telegram
-![telegram_allert](qa_guru_python_8_15/telegram_allert.jpg)
+![telegram_allert](qa_guru_python_8_15/telegram_allert.JPG)
 
 ----
 
@@ -112,4 +112,4 @@ run_remote = true - для запуска в CI/CD
 
 ### Mind map тест плана
 
-![allure_reports_graphs](qa_guru_python_8_15/test-case-mind-map.jpg)
+![allure_reports_graphs](qa_guru_python_8_15/test-case-mind-map.JPG)
